@@ -59,7 +59,7 @@ export const BuyButton = styled.button`
     self-start
     bg-accent
     rounded 
-    text-lg 
+    md:text-lg 
     text-white 
     hover:bg-[#e66161]
   `}
