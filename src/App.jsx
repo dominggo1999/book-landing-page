@@ -1,24 +1,31 @@
 import React from 'react';
-import tw, { styled } from 'twin.macro';
-
-export const Box = styled.div`
-  ${tw`
-    w-full 
-    h-screen 
-    bg-black 
-    flex 
-    justify-center
-    items-center
-    text-white
-    text-2xl
-  `}
-`;
+import Header from './layout/Header/Header';
+import Synopsis from './layout/Synopsis/Synopsis';
+import About from './layout/About/About';
+import Sponsors from './layout/Sponsors/Sponsors';
+import Chapters from './layout/Chapters/Chapters';
+import Reviews from './layout/Reviews/Reviews';
+import Author from './layout/Author/Author';
+import Contact from './layout/Contact/Contact';
+import Faq from './layout/Faq/Faq';
+import Footer from './layout/Footer/Footer';
+import Hero from './layout/Hero/Hero';
 
 const App = () => {
   return (
-    <Box>
-      Placeholder
-    </Box>
+    <>
+      <Header />
+      <Hero />
+      <Synopsis />
+      <About />
+      <Sponsors />
+      <Chapters />
+      <Reviews />
+      <Author />
+      <Contact />
+      <Faq />
+      <Footer />
+    </>
   );
 };
 
