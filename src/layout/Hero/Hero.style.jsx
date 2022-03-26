@@ -29,24 +29,24 @@ export const SmallDescription = styled.p`
     mb-1 
     text-accent
     text-sm
-    md:text-base
+    lg:text-base
   `}
 `;
 
 export const Title = styled.h1`
   ${tw`
     text-4xl
-    md:text-6xl 
+    lg:text-6xl 
     font-secondary
     mb-2
-    md:mb-5
+    lg:mb-5
   `}
 `;
 
 export const Description = styled.h2`
   ${tw`
     text-lg
-    md:text-2xl   
+    lg:text-2xl   
     mb-6
   `}
 `;
