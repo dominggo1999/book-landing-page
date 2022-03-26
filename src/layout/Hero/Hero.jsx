@@ -7,6 +7,7 @@ import {
   Description,
   BuyButton,
   BookCover,
+  ImageWrapper,
 } from './Hero.style';
 
 const Hero = () => {
@@ -26,10 +27,14 @@ const Hero = () => {
         <BuyButton>Buy On Amazon</BuyButton>
       </HeroText>
       <BookCover>
-        <img
-          src="/images/book-cover.png"
-          alt="Cover"
-        />
+        <ImageWrapper>
+          <img
+            src="/images/book-cover.png"
+            alt="Cover"
+            width="600"
+            height="766"
+          />
+        </ImageWrapper>
       </BookCover>
 
     </HeroWrapper>

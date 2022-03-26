@@ -73,11 +73,16 @@ export const BookCover = styled.div`
     py-10 
     md:p-0
   `}
+`;
+
+export const ImageWrapper = styled.div`
+  ${tw`
+    w-[70%] 
+    lg:w-[60%]
+  `}
 
   img{
     ${tw`
-      w-[70%] 
-      lg:w-[60%]
       object-cover 
       object-center
     `}
