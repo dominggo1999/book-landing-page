@@ -9,6 +9,7 @@ import {
   BookCover,
   ImageWrapper,
 } from './Hero.style';
+import LazyLoadImage from '../../common/LazyLoadImage/LazyLoadImage';
 
 const Hero = () => {
   const heroRef = useRef();
@@ -28,11 +29,10 @@ const Hero = () => {
       </HeroText>
       <BookCover>
         <ImageWrapper>
-          <img
+          <LazyLoadImage
+            width={600}
+            height={766}
             src="/images/book-cover.png"
-            alt="Cover"
-            width="600"
-            height="766"
           />
         </ImageWrapper>
       </BookCover>

@@ -1,5 +1,6 @@
 import tw, { styled } from 'twin.macro';
 import { Wrapper } from '../../common/Wrapper';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const HeroWrapper = styled(Wrapper)`
   ${tw`
@@ -66,6 +67,7 @@ export const BuyButton = styled.button`
 
 export const BookCover = styled.div`
   ${tw`
+    w-full
     md:w-1/2 
     flex
     justify-center 
@@ -80,12 +82,4 @@ export const ImageWrapper = styled.div`
     w-[70%] 
     lg:w-[60%]
   `}
-
-  img{
-    ${tw`
-      object-cover 
-      object-center
-    `}
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  }
 `;
