@@ -8,7 +8,7 @@ import {
 const SectionHeader = ({ title, subtitle }) => {
   return (
     <SectionHeaderWrapper>
-      <Subtitle>{subtitle}</Subtitle>
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
       <Title>{title}</Title>
     </SectionHeaderWrapper>
   );

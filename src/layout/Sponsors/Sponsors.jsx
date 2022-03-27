@@ -7,9 +7,9 @@ import {
   SponsorItem,
 } from './Sponsors.style';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
+import { arrayFromNumber } from '../../util/arrayFromNumber';
 
-let sponsorList = Array.from(Array(12).keys());
-sponsorList = sponsorList.slice(sponsorList.indexOf(1));
+const sponsorList = arrayFromNumber(11);
 
 const Sponsors = () => {
   return (

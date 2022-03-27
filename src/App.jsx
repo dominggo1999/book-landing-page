@@ -10,6 +10,7 @@ import Contact from './layout/Contact/Contact';
 import Faq from './layout/Faq/Faq';
 import Footer from './layout/Footer/Footer';
 import Hero from './layout/Hero/Hero';
+import BuyNow from './layout/BuyNow/BuyNow';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <About />
       <Sponsors />
       <Chapters />
+      <BuyNow />
       <Reviews />
       <Author />
       <Contact />
