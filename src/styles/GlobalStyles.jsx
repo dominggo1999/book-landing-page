@@ -11,6 +11,12 @@ const CustomStyles = createGlobalStyle`
       text-main-text
     `}
   }
+
+  a{
+    ${tw`
+      inline-block
+    `}
+  }
 `;
 
 const GlobalStyles = () => (

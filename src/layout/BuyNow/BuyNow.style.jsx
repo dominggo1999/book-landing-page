@@ -13,8 +13,8 @@ export const BrandList = styled.div`
   ${tw`
     grid
     grid-cols-2 
-    md:grid-cols-4 
-    gap-10
+    md:grid-cols-4  
+    gap-y-4
   `}
 `;
 
@@ -35,18 +35,16 @@ export const BrandLogo = styled.a`
     }
   }
 
-  & > div, svg {
+  & > div {
     ${tw`
-      w-28 
-      h-28
-      lg:w-32 
-      lg:h-32
+      h-32
     `}
   }
 
   svg {
     ${tw`
       w-32
+      h-32
     `}
   }
 
