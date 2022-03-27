@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         accent: '#D64D4E',
+        'accent-lighter': '#e66161',
         primary: '#EAD0C6',
         'main-text': '#293A51',
       },

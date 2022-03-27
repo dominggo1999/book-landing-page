@@ -61,7 +61,7 @@ export const BuyButton = styled.button`
     rounded 
     md:text-lg 
     text-white 
-    hover:bg-[#e66161]
+    hover:bg-accent-lighter
   `}
 `;
 

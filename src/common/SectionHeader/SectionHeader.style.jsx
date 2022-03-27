@@ -6,6 +6,8 @@ export const SectionHeaderWrapper = styled(Wrapper)`
     flex
     flex-col 
     items-center
+    mb-3
+    md:mb-8
   `}
 `;
 
@@ -15,8 +17,6 @@ export const Title = styled.div`
     lg:text-4xl 
     font-secondary
     text-center
-    mb-3
-    md:mb-8
   `}
 `;
 
