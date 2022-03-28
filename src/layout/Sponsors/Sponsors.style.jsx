@@ -33,16 +33,8 @@ export const SponsorItem = styled.div`
     md:px-6
   `}
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  
-  & > div{
-    ${tw`
-      flex 
-      items-center 
-    `}
-  }
 
-
-  & > div, svg {
+  svg {
     ${tw`
       w-[120px]
       h-[40px]

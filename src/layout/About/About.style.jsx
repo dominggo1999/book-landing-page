@@ -90,19 +90,12 @@ export const CardImage = styled.div`
     mb-4
   `}
 
-  & > div, svg {
+  svg {
     ${tw`
       w-12 
       h-12
       lg:w-16 
       lg:h-16
-    `}
-  }
-
-  svg {
-    ${tw`
-      w-12
-      lg:w-16
     `}
   }
 

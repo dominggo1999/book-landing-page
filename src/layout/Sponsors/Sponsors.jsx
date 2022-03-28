@@ -8,8 +8,18 @@ import {
 } from './Sponsors.style';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import { arrayFromNumber } from '../../util/arrayFromNumber';
+import { svgModulesToComponents } from '../../util/svgModulesToComponents';
 
-const sponsorList = arrayFromNumber(11);
+const svgModules = import.meta.globEager('../../images/sponsors/*.svg');
+
+const icons = svgModulesToComponents(svgModules);
+// Add icons to sponsor list
+const sponsorList = arrayFromNumber(11).map((i, id) => {
+  return {
+    order: i,
+    icon: icons[id],
+  };
+});
 
 const Sponsors = () => {
   return (
@@ -27,11 +37,9 @@ const Sponsors = () => {
             sponsorList.map((item) => {
               return (
                 <SponsorItem
-                  key={`/images/sponsors/${item}.svg`}
+                  key={`/images/sponsors/${item.order}.svg`}
                 >
-                  <ReactSVG
-                    src={`/images/sponsors/${item}.svg`}
-                  />
+                  {item.icon()}
                 </SponsorItem>
               );
             })

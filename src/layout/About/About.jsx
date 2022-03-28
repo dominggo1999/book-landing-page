@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 import {
   AboutWrapper,
   DescriptionWrapper,
@@ -13,6 +12,10 @@ import {
   CardLabel,
   CardText,
 } from './About.style';
+import { svgModulesToComponents } from '../../util/svgModulesToComponents';
+
+const svgModules = import.meta.globEager('../../images/about/*.svg');
+const icons = svgModulesToComponents(svgModules);
 
 // What Will You Get From This Book?
 const About = () => {
@@ -35,14 +38,14 @@ const About = () => {
         <CardsCol>
           <CardItem>
             <CardImage>
-              <ReactSVG src="/images/about/geometric.svg" />
+              {icons[0]()}
             </CardImage>
             <CardLabel>Taciti sociosqu</CardLabel>
             <CardText>Maecenas orci libero, vehicula eu volutpat ac, ultrices id tellus integer quis ligula</CardText>
           </CardItem>
           <CardItem>
             <CardImage>
-              <ReactSVG src="/images/about/geometric-shape.svg" />
+              {icons[1]()}
             </CardImage>
             <CardLabel>Taciti sociosqu</CardLabel>
             <CardText>Maecenas orci libero, vehicula eu volutpat ac, ultrices id tellus integer quis ligula</CardText>
@@ -53,14 +56,14 @@ const About = () => {
         <CardsCol>
           <CardItem>
             <CardImage>
-              <ReactSVG src="/images/about/waves.svg" />
+              {icons[2]()}
             </CardImage>
             <CardLabel>Taciti sociosqu</CardLabel>
             <CardText>Maecenas orci libero, vehicula eu volutpat ac, ultrices id tellus integer quis ligula</CardText>
           </CardItem>
           <CardItem>
             <CardImage>
-              <ReactSVG src="/images/about/wizard.svg" />
+              {icons[3]()}
             </CardImage>
             <CardLabel>Taciti sociosqu</CardLabel>
             <CardText>Maecenas orci libero, vehicula eu volutpat ac, ultrices id tellus integer quis ligula</CardText>

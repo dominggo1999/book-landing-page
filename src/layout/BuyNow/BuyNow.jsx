@@ -1,5 +1,4 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import {
   BuyNowWrapper,
@@ -7,9 +6,19 @@ import {
   BrandLogo,
 } from './BuyNow.style';
 import { arrayFromNumber } from '../../util/arrayFromNumber';
+import { svgModulesToComponents } from '../../util/svgModulesToComponents';
 
 const url = 'https://www.google.com/search?q=bookstore';
-const brandList = arrayFromNumber(4);
+const svgModules = import.meta.globEager('../../images/buy-at/*.svg');
+
+const icons = svgModulesToComponents(svgModules);
+// Add icons to sponsor list
+const brandList = arrayFromNumber(4).map((i, id) => {
+  return {
+    order: i,
+    icon: icons[id],
+  };
+});
 
 const BuyNow = () => {
   return (
@@ -28,9 +37,7 @@ const BuyNow = () => {
                 href={url}
                 key={`/images/buy-at/${item}.svg`}
               >
-                <ReactSVG
-                  src={`/images/buy-at/${item}.svg`}
-                />
+                {item.icon()}
               </BrandLogo>
             );
           })
