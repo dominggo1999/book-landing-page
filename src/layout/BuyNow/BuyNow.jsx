@@ -35,7 +35,7 @@ const BuyNow = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={url}
-                key={`/images/buy-at/${item}.svg`}
+                key={`/images/buy-at/${item.order}.svg`}
               >
                 {item.icon()}
               </BrandLogo>
