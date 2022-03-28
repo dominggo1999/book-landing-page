@@ -1,0 +1,42 @@
+export const reviews = [
+  {
+    label: 'Nulla eu pulvinar quam !',
+    description: ' Nulla sodales porta elit varius semper. Nulla facilisi. Nam sed orci in libero vestibulum rutrum. Praesent iaculis vestibulum magna, et volutpat nunc pulvinar at. Aenean vulputate neque sit amet laoreet suscipit. ',
+    name: 'Theodore Jackson',
+    role: 'Software Engineer',
+    company: 'Pubblica',
+    image: 'https://themeturn.com/wp/treasor/wp-content/uploads/2021/03/test-1.jpg',
+  },
+  {
+    label: 'Sit amet facilisis magna etiam tempor orci',
+    description: 'In dictum, mauris id semper convallis, magna mi tempor enim, ac euismod tellus quam sed orci',
+    name: 'Grace Angel',
+    role: 'Designer',
+    company: 'Typo',
+    image: 'https://themeturn.com/wp/treasor/wp-content/uploads/2021/03/test-1.jpg',
+  },
+  {
+    label: 'Purus sit amet luctus venenatis',
+    description: 'Massa tincidunt dui ut ornare. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Nulla sit amet fermentum ex, non tincidunt arcu. Proin quis felis nunc. Phasellus vulputate, erat sed ultricies condimentum.',
+    name: 'Langford',
+    role: 'Product Manager',
+    company: 'Integral',
+    image: 'https://themeturn.com/wp/treasor/wp-content/uploads/2021/03/test-1.jpg',
+  },
+  {
+    label: 'Turpis cursus in hac!',
+    description: 'Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat.',
+    name: 'Federico Myton',
+    role: 'Software Engineer',
+    company: 'Contra',
+    image: 'https://themeturn.com/wp/treasor/wp-content/uploads/2021/03/test-1.jpg',
+  },
+  {
+    label: 'Fermentum posuere urna nec tincidunt praesent',
+    description: 'Morbi tincidunt ornare massa eget egestas. Sagittis nisl rhoncus mattis rhoncus urna neque viverra. Blandit turpis cursus in hac habitasse platea dictumst quisque.',
+    name: 'Nichols Jackson',
+    role: 'UI/UX Designer',
+    company: 'Picto',
+    image: 'https://themeturn.com/wp/treasor/wp-content/uploads/2021/03/test-1.jpg',
+  },
+];

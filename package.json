@@ -16,7 +16,9 @@
     "react-lazy-load-image-component": "^1.5.1",
     "react-router-dom": "^6.0.2",
     "react-svg": "^14.1.16",
-    "styled-components": "^5.3.1"
+    "short-uuid": "^4.2.0",
+    "styled-components": "^5.3.1",
+    "swiper": "^6.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",

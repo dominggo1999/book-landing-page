@@ -5,6 +5,10 @@ import App from './App';
 import GlobalStyles from './styles/GlobalStyles';
 import './styles/fonts.css';
 
+// Swiper react styles
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>

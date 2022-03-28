@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const LazyLoadImage = ({ width, height, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
-  const aspectRatio = `${width} / ${height}`;
+  const aspectRatio = width && height && `${width} / ${height}`;
 
   const imageLoaded = () => {
     setLoaded(true);
