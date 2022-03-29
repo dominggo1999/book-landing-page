@@ -1,0 +1,49 @@
+import React, { useState, useRef, useLayoutEffect } from 'react';
+import { IoIosArrowDown, IoMdClose } from 'react-icons/io';
+
+import {
+  Header,
+  Content,
+  AccordionContainer,
+  Label,
+  Icon,
+  DummyContainer,
+} from './Accordion.style';
+
+const Accordion = ({ header, children }) => {
+  const [opened, setOpened] = useState(false);
+  const toggleContent = () => {
+    setOpened(!opened);
+  };
+
+  return (
+    <DummyContainer>
+      <AccordionContainer
+        className="accordion"
+      >
+        <Header
+          opened={opened}
+          onClick={toggleContent}
+        >
+          <Label>
+            {header}
+          </Label>
+          <Icon>
+            {
+              opened
+                ? <IoMdClose />
+                : <IoIosArrowDown />
+            }
+          </Icon>
+        </Header>
+        <Content
+          className={opened ? 'opened' : null}
+        >
+          {children}
+        </Content>
+      </AccordionContainer>
+    </DummyContainer>
+  );
+};
+
+export default Accordion;
