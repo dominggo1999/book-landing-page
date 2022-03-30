@@ -54,10 +54,15 @@ export const Content = styled.div`
     w-full
     px-6
     h-0
+    opacity-0
   `}
+
+  transition : all ease-in-out 220ms;
+
 
   &.opened {
     ${tw`
+      opacity-100
       h-auto
     `}
   }
