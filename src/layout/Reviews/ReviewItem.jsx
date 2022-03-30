@@ -14,7 +14,6 @@ import {
 import LazyLoadImage from '../../common/LazyLoadImage/LazyLoadImage';
 
 const ReviewItem = ({ item }) => {
-  console.log(item.image);
   return (
     <Item>
       <QuotationMark>

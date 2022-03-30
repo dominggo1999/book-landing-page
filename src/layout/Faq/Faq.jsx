@@ -1,4 +1,5 @@
 import React from 'react';
+import short from 'short-uuid';
 import { FaqWrapper, Questions, Answer } from './Faq.style';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import { faqs } from '../../data/faqs';
@@ -15,7 +16,10 @@ const Faq = () => {
         {
           faqs?.length > 0 && faqs.map((item) => {
             return (
-              <Accordion header={`${item.question} ?`}>
+              <Accordion
+                key={short.generate()}
+                header={`${item.question} ?`}
+              >
                 <Answer>{item.answer}</Answer>
               </Accordion>
             );

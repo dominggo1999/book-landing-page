@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoMdClose } from 'react-icons/io';
-
 import {
   Header,
   Content,
