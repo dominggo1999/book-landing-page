@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {
+  useRef,
+  useState,
+  useEffect,
+} from 'react';
 import {
   Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
+
 import {
   FormWrapper,
   TopSection,
@@ -10,6 +15,8 @@ import {
   SubmitButton,
   FieldWrapper,
   ErrorMessageWrapper,
+  FormActions,
+  SuccessMessage,
 } from './ContactForm.style';
 
 const initialValues = {
@@ -32,9 +39,23 @@ const validationSchema = Yup.object({
 });
 
 const ContactForm = () => {
-  const handleSubmit = (val) => {
-    // console.log(val);
+  const [success, setSuccess] = useState(false);
+  const messageTimerRef = useRef();
+
+  const handleSubmit = (val, { resetForm }) => {
+    resetForm();
+
+    setSuccess(true);
+    messageTimerRef.current = setTimeout(() => {
+      setSuccess(false);
+    }, 2000);
   };
+
+  useEffect(() => {
+    return () => {
+      clearInterval(messageTimerRef.current);
+    };
+  }, []);
 
   return (
     <FormWrapper>
@@ -91,7 +112,14 @@ const ContactForm = () => {
               </ErrorMessageWrapper>
             </FieldWrapper>
           </BottomSection>
-          <SubmitButton type="submit">Submit</SubmitButton>
+          <FormActions>
+            <SubmitButton type="submit">Submit</SubmitButton>
+            {
+              success && (
+                <SuccessMessage>Thank you for your message</SuccessMessage>
+              )
+            }
+          </FormActions>
         </Form>
       </Formik>
     </FormWrapper>

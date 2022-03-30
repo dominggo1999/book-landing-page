@@ -92,3 +92,17 @@ export const ErrorMessageWrapper = styled.span`
     font-secondary
   `}
 `;
+
+export const FormActions = styled.div`
+  ${tw`
+    flex
+    gap-x-2
+    items-center
+  `}
+`;
+
+export const SuccessMessage = styled.div`
+  ${tw`
+    text-accent
+  `}
+`;
