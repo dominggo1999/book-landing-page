@@ -20,7 +20,7 @@ export const Header = styled.div`
 
   *{
     ${tw`
-      text-left
+      md:text-left
     `}
   }
 `;
