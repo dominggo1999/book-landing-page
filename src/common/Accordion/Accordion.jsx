@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import { IoIosArrowDown, IoMdClose } from 'react-icons/io';
 
 import {
@@ -7,7 +7,7 @@ import {
   AccordionContainer,
   Label,
   Icon,
-  DummyContainer,
+  StyledAccordion,
 } from './Accordion.style';
 
 const Accordion = ({ header, children }) => {
@@ -17,7 +17,7 @@ const Accordion = ({ header, children }) => {
   };
 
   return (
-    <DummyContainer>
+    <StyledAccordion>
       <AccordionContainer
         className="accordion"
       >
@@ -42,7 +42,7 @@ const Accordion = ({ header, children }) => {
           {children}
         </Content>
       </AccordionContainer>
-    </DummyContainer>
+    </StyledAccordion>
   );
 };
 

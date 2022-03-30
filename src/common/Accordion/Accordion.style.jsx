@@ -1,18 +1,19 @@
 import tw, { styled } from 'twin.macro';
 
-export const DummyContainer = styled.div`
+export const StyledAccordion = styled.div`
   ${tw`
     w-full
+    rounded-lg
   `}
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 `;
 
 export const AccordionContainer = styled.div`
   ${tw`
     w-full 
     relative
+    overflow-hidden
   `}
 
   transition : height ease-in-out 200ms;
@@ -52,7 +53,6 @@ export const Content = styled.div`
   ${tw`
     w-full
     px-6
-    pb-4
     h-0
   `}
 

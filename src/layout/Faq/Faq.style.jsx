@@ -24,5 +24,6 @@ export const Questions = styled.div`
 export const Answer = styled.p`
   ${tw`
     text-lg
+    mb-4
   `}
 `;
