@@ -27,7 +27,6 @@ const App = () => {
       <Contact />
       <Faq />
       <Footer />
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </>
   );
 };
