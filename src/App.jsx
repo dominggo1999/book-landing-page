@@ -24,8 +24,8 @@ const App = () => {
       <BuyNow />
       <Reviews />
       <Author />
-      <Contact />
       <Faq />
+      <Contact />
       <Footer />
     </>
   );

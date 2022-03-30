@@ -13,35 +13,9 @@ export const AboutWrapper = styled(Wrapper)`
   `}
 `;
 
-export const DescriptionWrapper = styled.div`
+export const Header = styled.div`
   ${tw`
-    flex 
-    flex-col
-    lg:w-5/12 
-  `}
-`;
-
-export const DescriptionSubtitle = styled(Subtitle)`
-  ${tw`
-    lg:text-left
-  `}
-`;
-
-export const DescriptionTitle = styled(Title)`
-  ${tw`
-    mb-2
-    lg:text-left
-  `}
-`;
-
-export const DescriptionText = styled.div`
-  ${tw`
-    text-base
-    text-center
-    mb-4
-    text-lg 
-    lg:mb-8
-    lg:text-left
+    lg:w-5/12
   `}
 `;
 

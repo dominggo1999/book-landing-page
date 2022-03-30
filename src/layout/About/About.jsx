@@ -1,18 +1,16 @@
 import React from 'react';
 import {
   AboutWrapper,
-  DescriptionWrapper,
-  DescriptionSubtitle,
-  DescriptionTitle,
-  DescriptionText,
   CardsWrapper,
   CardsCol,
   CardImage,
   CardItem,
   CardLabel,
   CardText,
+  Header,
 } from './About.style';
 import { svgModulesToComponents } from '../../util/svgModulesToComponents';
+import SideHeader from '../../common/SideHeader/SideHeader';
 
 const svgModules = import.meta.globEager('../../images/about/*.svg');
 const icons = svgModulesToComponents(svgModules);
@@ -21,18 +19,13 @@ const icons = svgModulesToComponents(svgModules);
 const About = () => {
   return (
     <AboutWrapper id="about-wrapper">
-      <DescriptionWrapper>
-        <DescriptionSubtitle>
-          About
-        </DescriptionSubtitle>
-        <DescriptionTitle>
-          Mauris blandit imperdiet scelerisque.
-        </DescriptionTitle>
-        <DescriptionText>
-          Praesent scelerisque dolor gravida sapien tincidunt consequat. Nam ut sagittis augue. Nam felis felis, cursus nec cursus eu, vestibulum accumsan neque.
-        </DescriptionText>
-
-      </DescriptionWrapper>
+      <Header>
+        <SideHeader
+          subtitle="About"
+          title="Curabitur condimentum tortor a dui tempor"
+          description="Etiam faucibus sem eget malesuada tristique. In vehicula interdum eleifend. Proin placerat vehicula odio, quis euismod odio auctor"
+        />
+      </Header>
 
       <CardsWrapper>
         <CardsCol>
