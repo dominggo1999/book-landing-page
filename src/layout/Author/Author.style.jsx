@@ -3,6 +3,9 @@ import { Wrapper } from '../../common/Wrapper';
 
 export const AuthorWrapper = styled(Wrapper)`
   ${tw`
-    
+    flex 
+    flex-col
+    py-8
+    gap-y-8
   `}
 `;

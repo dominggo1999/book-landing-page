@@ -7,6 +7,7 @@ export const ImageWrapper = styled.div`
   filter: blur(15px);
 
   img {
+    width : 100%;
     opacity: 0;
   }
 

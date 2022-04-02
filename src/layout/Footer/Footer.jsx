@@ -1,11 +1,5 @@
 import React from 'react';
 import {
-  AiOutlineInstagram,
-  AiFillFacebook,
-  AiFillTwitterSquare,
-} from 'react-icons/ai';
-import { BsPinterest } from 'react-icons/bs';
-import {
   FooterWrapper,
   Header,
   Left,
@@ -13,26 +7,25 @@ import {
   Information,
   Contact,
   Content,
-  Socmed,
-  SocmedIcon,
 } from './Footer.style';
+import Socmed from '../../common/Socmed/Socmed';
 
-const socmedLinks = [
+const footerSocmedLinks = [
   {
     link: 'https://www.instagram.com',
-    icon: AiOutlineInstagram,
+    type: 'instagram',
   },
   {
     link: 'https://www.facebook.com',
-    icon: AiFillFacebook,
+    type: 'facebook',
   },
   {
     link: 'https://www.twitter.com',
-    icon: AiFillTwitterSquare,
+    type: 'twitter',
   },
   {
     link: 'https://www.pinterest.com',
-    icon: BsPinterest,
+    type: 'pinterest',
   },
 ];
 
@@ -63,22 +56,7 @@ const Footer = () => {
           <Content>
             <li>loremipsum@placeholder.com</li>
             <li>(+123) 87654321</li>
-            <li>
-              <Socmed>
-                {socmedLinks?.length > 0 && socmedLinks.map((item) => {
-                  return (
-                    <SocmedIcon
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.link}
-                      key={`footer-link-${item.link}`}
-                    >
-                      {item.icon()}
-                    </SocmedIcon>
-                  );
-                })}
-              </Socmed>
-            </li>
+            <li><Socmed socmedLinks={footerSocmedLinks} /></li>
           </Content>
         </Contact>
       </Right>

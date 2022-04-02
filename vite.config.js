@@ -19,4 +19,7 @@ export default defineConfig({
     'process.platform': JSON.stringify('win32'),
     'process.env': {},
   },
+  server: {
+    port: 5001,
+  },
 });
