@@ -24,11 +24,11 @@ export const navigationLinks = [
     href: '#author',
   },
   {
-    name: 'Contact',
-    href: '#contact',
-  },
-  {
     name: 'FAQ',
     href: '#faq',
+  },
+  {
+    name: 'Contact',
+    href: '#contact',
   },
 ];

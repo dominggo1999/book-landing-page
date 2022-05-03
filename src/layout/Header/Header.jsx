@@ -12,10 +12,12 @@ import {
 } from './Header.style';
 import { navigationLinks } from '../../data/navigationLinks';
 import useShowNavigation from '../../hooks/useShowNavigation';
+import useActiveNavLink from '../../hooks/useActiveNavLink';
 import { headerHeight } from '../../constants/headerHeight';
 
 const Header = () => {
   const { showNavigation, toggleNavigation } = useShowNavigation();
+  const { navigationRef, active } = useActiveNavLink();
 
   return (
     <HeaderWrapper
@@ -23,7 +25,7 @@ const Header = () => {
       id="header"
     >
       <HeaderContent>
-        <Brand>
+        <Brand href="#hero">
           Lorem
         </Brand>
         <MenuIcon onClick={toggleNavigation}>
@@ -33,11 +35,15 @@ const Header = () => {
               : <AiOutlineMenu />
           }
         </MenuIcon>
-        <Navigation>
+        <Navigation ref={navigationRef}>
           {
-            navigationLinks?.length && navigationLinks.map((link) => {
+            navigationLinks?.length && navigationLinks.map((link, id) => {
+              const isActive = id === active;
               return (
-                <NavItem key={`navigation-link-${link.name}`}>
+                <NavItem
+                  isActive={isActive}
+                  key={`navigation-link-${link.name}`}
+                >
                   <a href={link.href}>{link.name}</a>
                 </NavItem>
               );
@@ -51,9 +57,15 @@ const Header = () => {
           showNavigation && (
             <NavigationMobile>
               {
-                navigationLinks?.length && navigationLinks.map((link) => {
+                navigationLinks?.length && navigationLinks.map((link, id) => {
+                  const isActive = id === active;
+
                   return (
-                    <NavigationItemMobile onClick={toggleNavigation} key={`navigation-link-mobile-${link.name}`}>
+                    <NavigationItemMobile
+                      isActive={isActive}
+                      onClick={toggleNavigation}
+                      key={`navigation-link-mobile-${link.name}`}
+                    >
                       <a href={link.href}>{link.name}</a>
                     </NavigationItemMobile>
                   );

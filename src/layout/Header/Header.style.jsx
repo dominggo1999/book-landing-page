@@ -23,11 +23,13 @@ export const HeaderContent = styled(Wrapper)`
   `}
 `;
 
-export const Brand = styled.div`
+export const Brand = styled.a`
   ${tw`
     text-3xl 
     text-accent
-    font-secondary
+    font-secondary 
+    inline-block 
+    cursor-pointer
   `}
 `;
 
@@ -54,6 +56,8 @@ export const NavItem = styled.li`
     capitalize 
     text-lg
   `}
+
+  ${({ isActive }) => isActive && tw`text-accent`}
 `;
 
 export const NavigationMobile = styled.ul`
@@ -72,6 +76,8 @@ export const NavigationMobile = styled.ul`
   `}
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 16px 18px 0px;
+
+  ${({ isActive }) => isActive && tw`text-accent`}
 `;
 
 export const NavigationItemMobile = styled(NavItem)`
