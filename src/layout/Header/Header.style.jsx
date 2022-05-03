@@ -5,7 +5,12 @@ export const HeaderWrapper = styled.header`
   ${tw`
     py-4
     w-full 
-    relative
+    relative 
+    fixed 
+    z-50 
+    bg-primary
+    top-0 
+    left-0
   `}
 `;
 

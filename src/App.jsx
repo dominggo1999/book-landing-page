@@ -11,10 +11,13 @@ import Faq from './layout/Faq/Faq';
 import Hero from './layout/Hero/Hero';
 import BuyNow from './layout/BuyNow/BuyNow';
 import Footer from './layout/Footer/Footer';
+import { AppWrapper, ScrollPaddingTop } from './App.style';
+import { headerHeight } from './constants/headerHeight';
 
 const App = () => {
   return (
-    <>
+    <AppWrapper style={{ paddingTop: headerHeight }}>
+      <ScrollPaddingTop />
       <Header />
       <Hero />
       <Synopsis />
@@ -27,7 +30,7 @@ const App = () => {
       <Faq />
       <Contact />
       <Footer />
-    </>
+    </AppWrapper>
   );
 };
 

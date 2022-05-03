@@ -18,7 +18,7 @@ const icons = svgModulesToComponents(svgModules);
 // What Will You Get From This Book?
 const About = () => {
   return (
-    <AboutWrapper id="about-wrapper">
+    <AboutWrapper id="about">
       <Header>
         <SideHeader
           subtitle="About"
