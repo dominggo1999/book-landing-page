@@ -51,13 +51,18 @@ export const Navigation = styled.ul`
 
 export const NavItem = styled.li`
   ${tw`
-    font-semibold
     font-primary
     capitalize 
     text-lg
   `}
 
   ${({ isActive }) => isActive && tw`text-accent`}
+
+  button{
+    ${tw`
+      font-semibold
+    `}
+  }
 `;
 
 export const NavigationMobile = styled.ul`

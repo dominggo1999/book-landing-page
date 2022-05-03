@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { scroller, Events } from 'react-scroll';
 import {
   HeaderWrapper,
   HeaderContent,
@@ -15,9 +16,30 @@ import useShowNavigation from '../../hooks/useShowNavigation';
 import useActiveNavLink from '../../hooks/useActiveNavLink';
 import { headerHeight } from '../../constants/headerHeight';
 
+const remToPixel = (rem) => parseFloat(rem.replace('em', '')) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+// Detect when smooth scroll events end
+Events.scrollEvent.register('end', (to, element) => {
+  window.location.hash = `#${to}`;
+});
+
 const Header = () => {
   const { showNavigation, toggleNavigation } = useShowNavigation();
   const { navigationRef, active } = useActiveNavLink();
+
+  const scrollToTarget = (href) => {
+    scroller.scrollTo(href.replace('#', ''), {
+      duration: 1600,
+      smooth: 'easeInOutQuint',
+      offset: -remToPixel(headerHeight),
+      ignoreCancelEvents : true
+    });
+  };
+
+  const handleMobileNavClick = (href) => {
+    toggleNavigation();
+    scrollToTarget(href);
+  };
 
   return (
     <HeaderWrapper
@@ -44,7 +66,11 @@ const Header = () => {
                   isActive={isActive}
                   key={`navigation-link-${link.name}`}
                 >
-                  <a href={link.href}>{link.name}</a>
+                  <button
+                    role="link"
+                    onClick={() => scrollToTarget(link.href)}
+                  >{link.name}
+                  </button>
                 </NavItem>
               );
             })
@@ -52,7 +78,6 @@ const Header = () => {
         </Navigation>
 
         {/* Mobile Navigation */}
-
         {
           showNavigation && (
             <NavigationMobile>
@@ -63,10 +88,13 @@ const Header = () => {
                   return (
                     <NavigationItemMobile
                       isActive={isActive}
-                      onClick={toggleNavigation}
                       key={`navigation-link-mobile-${link.name}`}
                     >
-                      <a href={link.href}>{link.name}</a>
+                      <button
+                        role="link"
+                        onClick={() => handleMobileNavClick(link.href)}
+                      >{link.name}
+                      </button>
                     </NavigationItemMobile>
                   );
                 })
