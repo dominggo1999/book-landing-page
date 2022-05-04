@@ -34,7 +34,13 @@ const Hero = () => {
         </SmallDescription>
         <Title variants={slideUp}>Lorem ipsum dolor sit, amet consectetur</Title>
         <Description variants={slideUp}>Praesent feugiat sapien a arcu tempus aliquam. Ut sagittis, ipsum eu lobortis mattis, metus neque pellentesque dui. Cras quis tortor eleifend, commodo lectus nec, tincidunt nibh.</Description>
-        <BuyButton variants={slideUp}>Buy On Amazon</BuyButton>
+        <BuyButton
+          target="_blank"
+          rel="noopener noreferer"
+          href="https://www.amazon.com/"
+          variants={slideUp}
+        >Buy On Amazon
+        </BuyButton>
       </HeroText>
       <BookCover>
         <ImageWrapper>

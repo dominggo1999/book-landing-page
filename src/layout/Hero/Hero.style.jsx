@@ -53,7 +53,7 @@ export const Description = styled(motion.h2)`
   `}
 `;
 
-export const BuyButton = styled(motion.button)`
+export const BuyButton = styled(motion.a)`
   ${tw`
     py-2
     px-3
