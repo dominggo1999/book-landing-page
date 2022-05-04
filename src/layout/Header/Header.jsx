@@ -47,7 +47,7 @@ const Header = () => {
       id="header"
     >
       <HeaderContent>
-        <Brand href="#hero">
+        <Brand onClick={() => scrollToTarget("#hero")} href="#hero">
           Lorem
         </Brand>
         <MenuIcon onClick={toggleNavigation}>
