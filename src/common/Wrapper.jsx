@@ -6,6 +6,5 @@ export const Wrapper = styled(motion.div)`
     mx-auto 
     max-w-7xl 
     px-5 
-    overflow-hidden
   `}
 `;

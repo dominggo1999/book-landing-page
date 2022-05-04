@@ -9,7 +9,7 @@ import useAnimate from '../../hooks/useAnimate';
 import { slideUp } from '../../animations/single';
 
 const Faq = () => {
-  const [faqRef, faqAnimationControls] = useAnimate();
+  const [faqRef, faqAnimationControls] = useAnimate({threshold : 0.2});
 
   return (
     <FaqWrapper id="faq">

@@ -10,6 +10,7 @@ export const ScrollPaddingTop = createGlobalStyle`
 
 export const AppWrapper = styled.div`
   ${tw`
-    py-10
+    py-10 
+    overflow-x-hidden
   `}
 `;

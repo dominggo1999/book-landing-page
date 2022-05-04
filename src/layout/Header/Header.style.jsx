@@ -21,7 +21,6 @@ export const HeaderContent = styled(Wrapper)`
     justify-between 
     items-center  
     relative 
-    overflow-visible
   `}
 `;
 
