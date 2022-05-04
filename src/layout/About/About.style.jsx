@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 import { Title, Subtitle } from '../../common/SectionHeader/SectionHeader.style';
 
@@ -19,7 +20,7 @@ export const Header = styled.div`
   `}
 `;
 
-export const CardsWrapper = styled.div`
+export const CardsWrapper = styled(motion.div)`
   ${tw`
     gap-x-4
     w-full
@@ -28,7 +29,7 @@ export const CardsWrapper = styled.div`
   `}
 `;
 
-export const CardsCol = styled.div`
+export const CardsCol = styled(motion.div)`
   ${tw`
     w-full
     sm:w-1/2
@@ -42,7 +43,7 @@ export const CardsCol = styled.div`
   }
 `;
 
-export const CardItem = styled.div`
+export const CardItem = styled(motion.div)`
   ${tw`
     flex 
     flex-col 

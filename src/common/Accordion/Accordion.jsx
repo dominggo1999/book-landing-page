@@ -9,14 +9,14 @@ import {
   StyledAccordion,
 } from './Accordion.style';
 
-const Accordion = ({ header, children }) => {
+const Accordion = ({ header, children, ...rest }) => {
   const [opened, setOpened] = useState(false);
   const toggleContent = () => {
     setOpened(!opened);
   };
 
   return (
-    <StyledAccordion>
+    <StyledAccordion {...rest}>
       <AccordionContainer
         className="accordion"
       >

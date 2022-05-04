@@ -1,10 +1,11 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import {
   Title as UnstyledTitle,
   Subtitle as UnstyledSubtitle,
 } from '../SectionHeader/SectionHeader.style';
 
-export const SideHeaderWrapper = styled.div`
+export const SideHeaderWrapper = styled(motion.div)`
   ${tw`
     flex 
     flex-col
@@ -25,7 +26,7 @@ export const Title = styled(UnstyledTitle)`
   `}
 `;
 
-export const Description = styled.div`
+export const Description = styled(motion.div)`
   ${tw`
     text-base
     text-center

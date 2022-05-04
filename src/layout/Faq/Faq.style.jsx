@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
 export const FaqWrapper = styled(Wrapper)`
@@ -8,7 +9,7 @@ export const FaqWrapper = styled(Wrapper)`
   `}
 `;
 
-export const Questions = styled.div`
+export const Questions = styled(motion.div)`
   ${tw`
     w-full
     grid

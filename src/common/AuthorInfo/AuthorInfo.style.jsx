@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../Wrapper';
 
 export const InfoWrapper = styled.div`
@@ -23,7 +24,7 @@ export const AuthorImage = styled.div`
   ${({ reversed }) => reversed && tw`sm:order-2`}
 `;
 
-export const Details = styled.div`
+export const Details = styled(motion.div)`
   ${tw`
     w-full
     flex 

@@ -11,12 +11,17 @@ import {
 } from './About.style';
 import { svgModulesToComponents } from '../../util/svgModulesToComponents';
 import SideHeader from '../../common/SideHeader/SideHeader';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
+import { basicStaggerNoDelay } from '../../animations/stagger';
 
 const svgModules = import.meta.globEager('../../images/about/*.svg');
 const icons = svgModulesToComponents(svgModules);
 
 // What Will You Get From This Book?
 const About = () => {
+  const [aboutRef, aboutAnimationControls] = useAnimate({ threshold: 0.3 });
+
   return (
     <AboutWrapper id="about">
       <Header>
@@ -27,8 +32,13 @@ const About = () => {
         />
       </Header>
 
-      <CardsWrapper>
-        <CardsCol>
+      <CardsWrapper
+        ref={aboutRef}
+        variants={basicStaggerNoDelay}
+        initial="hidden"
+        animate={aboutAnimationControls}
+      >
+        <CardsCol variants={slideUp}>
           <CardItem>
             <CardImage>
               {icons[0]()}
@@ -46,7 +56,7 @@ const About = () => {
 
         </CardsCol>
 
-        <CardsCol>
+        <CardsCol variants={slideUp}>
           <CardItem>
             <CardImage>
               {icons[2]()}

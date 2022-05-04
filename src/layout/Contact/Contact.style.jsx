@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
 export const ContactWrapper = styled(Wrapper)`
@@ -25,7 +26,7 @@ export const Header = styled.div`
   }
 `;
 
-export const FormSection = styled.div`
+export const FormSection = styled(motion.div)`
   ${tw`
     w-full
     md:w-7/12 

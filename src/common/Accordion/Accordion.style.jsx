@@ -1,6 +1,7 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 
-export const StyledAccordion = styled.div`
+export const StyledAccordion = styled(motion.div)`
   ${tw`
     w-full
     rounded-lg

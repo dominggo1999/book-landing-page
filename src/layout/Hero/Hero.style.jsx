@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -16,7 +17,7 @@ export const HeroWrapper = styled(Wrapper)`
   `}
 `;
 
-export const HeroText = styled.div`
+export const HeroText = styled(motion.div)`
   ${tw`
     flex 
     flex-col 
@@ -24,7 +25,7 @@ export const HeroText = styled.div`
   `}
 `;
 
-export const SmallDescription = styled.p`
+export const SmallDescription = styled(motion.p)`
   ${tw`
     font-secondary 
     mb-1 
@@ -34,7 +35,7 @@ export const SmallDescription = styled.p`
   `}
 `;
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   ${tw`
     text-4xl
     lg:text-6xl 
@@ -44,7 +45,7 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Description = styled.h2`
+export const Description = styled(motion.h2)`
   ${tw`
     text-lg
     lg:text-2xl   
@@ -52,7 +53,7 @@ export const Description = styled.h2`
   `}
 `;
 
-export const BuyButton = styled.button`
+export const BuyButton = styled(motion.button)`
   ${tw`
     py-2
     px-3

@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 import { breakpoints } from '../../constants/breakpoints';
 
@@ -10,7 +11,7 @@ export const SynopsisWrapper = styled(Wrapper)`
   `}
 `;
 
-export const SynopsisContent = styled.div`
+export const SynopsisContent = styled(motion.div)`
   ${tw`
     text-lg 
     relative

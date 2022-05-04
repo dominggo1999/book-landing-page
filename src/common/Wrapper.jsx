@@ -1,9 +1,11 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   ${tw`
     mx-auto 
     max-w-7xl 
-    px-5
+    px-5 
+    overflow-hidden
   `}
 `;

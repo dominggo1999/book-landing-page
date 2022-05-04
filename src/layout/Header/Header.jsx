@@ -15,6 +15,9 @@ import { navigationLinks } from '../../data/navigationLinks';
 import useShowNavigation from '../../hooks/useShowNavigation';
 import useActiveNavLink from '../../hooks/useActiveNavLink';
 import { headerHeight } from '../../constants/headerHeight';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp, brandSlideRight } from '../../animations/single';
+import { headerAnimation } from '../../animations/stagger';
 
 const remToPixel = (rem) => parseFloat(rem.replace('em', '')) * parseFloat(getComputedStyle(document.documentElement).fontSize);
 
@@ -26,13 +29,14 @@ Events.scrollEvent.register('end', (to, element) => {
 const Header = () => {
   const { showNavigation, toggleNavigation } = useShowNavigation();
   const { navigationRef, active } = useActiveNavLink();
+  const [headerRef, headerAnimationControls] = useAnimate();
 
   const scrollToTarget = (href) => {
     scroller.scrollTo(href.replace('#', ''), {
       duration: 1600,
       smooth: 'easeInOutQuint',
       offset: -remToPixel(headerHeight),
-      ignoreCancelEvents : true
+      ignoreCancelEvents: true,
     });
   };
 
@@ -45,9 +49,17 @@ const Header = () => {
     <HeaderWrapper
       style={{ height: headerHeight }}
       id="header"
+      ref={headerRef}
+      variants={headerAnimation}
+      initial="hidden"
+      animate={headerAnimationControls}
     >
       <HeaderContent>
-        <Brand onClick={() => scrollToTarget("#hero")} href="#hero">
+        <Brand
+          onClick={() => scrollToTarget('#hero')}
+          href="#hero"
+          variants={brandSlideRight}
+        >
           Lorem
         </Brand>
         <MenuIcon onClick={toggleNavigation}>
@@ -65,6 +77,7 @@ const Header = () => {
                 <NavItem
                   isActive={isActive}
                   key={`navigation-link-${link.name}`}
+                  variants={slideUp}
                 >
                   <button
                     role="link"

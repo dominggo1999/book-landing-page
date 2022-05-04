@@ -5,14 +5,19 @@ import {
 } from './AuthorInfo.style';
 import LazyLoadImage from '../LazyLoadImage/LazyLoadImage';
 import Socmed from '../Socmed/Socmed';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
 
 const AuthorInfo = ({ details, reversed }) => {
+  const [authorInfoRef, authorInfoAnimationControls] = useAnimate({ threshold: 0.2 });
   const {
     image, description, name, label, socmedLinks,
   } = details;
 
   return (
-    <InfoWrapper reversed={reversed}>
+    <InfoWrapper
+      reversed={reversed}
+    >
       <AuthorImage reversed={reversed}>
         <LazyLoadImage
           src={image.url}
@@ -20,7 +25,13 @@ const AuthorInfo = ({ details, reversed }) => {
           width={image.width}
         />
       </AuthorImage>
-      <Details reversed={reversed}>
+      <Details
+        ref={authorInfoRef}
+        variants={slideUp}
+        initial="hidden"
+        animate={authorInfoAnimationControls}
+        reversed={reversed}
+      >
         <Label>{label}</Label>
         <Name>{name}</Name>
         <Description>{description?.length > 0 && description.map((item) => {

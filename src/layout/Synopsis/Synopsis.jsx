@@ -6,15 +6,24 @@ import {
   Quote,
 } from './Synopsis.style';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
 
 const Synopsis = () => {
+  const [synopsisRef, synopsisAnimationControls] = useAnimate({ threshold: 0.2 });
+
   return (
     <SynopsisWrapper id="synopsis">
       <SectionHeader
         subtitle="Synopsis"
         title="Praesent fermentum cursus risus a sodales"
       />
-      <SynopsisContent>
+      <SynopsisContent
+        ref={synopsisRef}
+        variants={slideUp}
+        initial="hidden"
+        animate={synopsisAnimationControls}
+      >
 
         <Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Paragraph>
 

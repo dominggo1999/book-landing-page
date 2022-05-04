@@ -10,22 +10,31 @@ import {
   ImageWrapper,
 } from './Hero.style';
 import LazyLoadImage from '../../common/LazyLoadImage/LazyLoadImage';
+import useAnimate from '../../hooks/useAnimate';
+import { heroTextAnimation } from '../../animations/stagger';
+import { slideUp } from '../../animations/single';
 
 const Hero = () => {
   const heroRef = useRef();
+  const [heroTextRef, heroTextAnimationControls] = useAnimate();
 
   return (
     <HeroWrapper
       ref={heroRef}
       id="hero"
     >
-      <HeroText>
-        <SmallDescription>
+      <HeroText
+        ref={heroTextRef}
+        variants={heroTextAnimation}
+        animate={heroTextAnimationControls}
+        initial="hidden"
+      >
+        <SmallDescription variants={slideUp}>
           Aliquam vitae finibus tortor pellentesque euismod.
         </SmallDescription>
-        <Title>Lorem ipsum dolor sit, amet consectetur</Title>
-        <Description>Praesent feugiat sapien a arcu tempus aliquam. Ut sagittis, ipsum eu lobortis mattis, metus neque pellentesque dui. Cras quis tortor eleifend, commodo lectus nec, tincidunt nibh.</Description>
-        <BuyButton>Buy On Amazon</BuyButton>
+        <Title variants={slideUp}>Lorem ipsum dolor sit, amet consectetur</Title>
+        <Description variants={slideUp}>Praesent feugiat sapien a arcu tempus aliquam. Ut sagittis, ipsum eu lobortis mattis, metus neque pellentesque dui. Cras quis tortor eleifend, commodo lectus nec, tincidunt nibh.</Description>
+        <BuyButton variants={slideUp}>Buy On Amazon</BuyButton>
       </HeroText>
       <BookCover>
         <ImageWrapper>

@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
 export const BuyNowWrapper = styled(Wrapper)`
@@ -9,7 +10,7 @@ export const BuyNowWrapper = styled(Wrapper)`
   `}
 `;
 
-export const BrandList = styled.div`
+export const BrandList = styled(motion.div)`
   ${tw`
     grid
     grid-cols-2 
@@ -18,7 +19,7 @@ export const BrandList = styled.div`
   `}
 `;
 
-export const BrandLogo = styled.a`
+export const BrandLogo = styled(motion.a)`
   ${tw`
     flex 
     justify-center 

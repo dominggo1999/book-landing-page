@@ -1,5 +1,6 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
+import { motion } from 'framer-motion';
 import {
   SponsorsWrapper,
   SponsorList,
@@ -8,6 +9,8 @@ import {
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import { arrayFromNumber } from '../../util/arrayFromNumber';
 import { svgModulesToComponents } from '../../util/svgModulesToComponents';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
 
 const svgModules = import.meta.globEager('../../images/sponsors/*.svg');
 
@@ -21,30 +24,39 @@ const sponsorList = arrayFromNumber(11).map((i, id) => {
 });
 
 const Sponsors = () => {
+  const [sponsorsRef, sponsorsAnimationControls] = useAnimate({ threshold: 0.2 });
+
   return (
     <SponsorsWrapper id="sponsors">
       <SectionHeader
         title="Pellentesque finibus, dui et pretium venenatis"
         subtitle="Sponsors"
       />
-      <Marquee
-        speed={50}
-        gradient={false}
+      <motion.div
+        ref={sponsorsRef}
+        variants={slideUp}
+        initial="hidden"
+        animate={sponsorsAnimationControls}
       >
-        <SponsorList>
-          {
-            sponsorList.map((item) => {
-              return (
-                <SponsorItem
-                  key={`/images/sponsors/${item.order}.svg`}
-                >
-                  {item.icon()}
-                </SponsorItem>
-              );
-            })
-          }
-        </SponsorList>
-      </Marquee>
+        <Marquee
+          speed={50}
+          gradient={false}
+        >
+          <SponsorList>
+            {
+              sponsorList.map((item) => {
+                return (
+                  <SponsorItem
+                    key={`/images/sponsors/${item.order}.svg`}
+                  >
+                    {item.icon()}
+                  </SponsorItem>
+                );
+              })
+            }
+          </SponsorList>
+        </Marquee>
+      </motion.div>
     </SponsorsWrapper>
   );
 };

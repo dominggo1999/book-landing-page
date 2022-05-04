@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
 export const ReviewsWrapper = styled(Wrapper)`
@@ -10,7 +11,7 @@ export const ReviewsWrapper = styled(Wrapper)`
   `}
 `;
 
-export const ReviewsList = styled.div`
+export const ReviewsList = styled(motion.div)`
   ${tw`
     w-full 
   `}

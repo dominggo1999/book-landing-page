@@ -9,15 +9,24 @@ import {
   ChapterDescription,
 } from './Chapters.style';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
 
 const Chapters = () => {
+  const [chaptersRef, chaptersAnimationControls] = useAnimate({ threshold: 0.15 });
+
   return (
     <ChapterWrapper id="chapters">
       <SectionHeader
         subtitle="Chapters"
         title="Praesent fermentum cursus risus a sodales"
       />
-      <ChapterList>
+      <ChapterList
+        ref={chaptersRef}
+        variants={slideUp}
+        initial="hidden"
+        animate={chaptersAnimationControls}
+      >
         <ChapterItem>
           <ChapterNumber>1</ChapterNumber>
           <ChapterContent>

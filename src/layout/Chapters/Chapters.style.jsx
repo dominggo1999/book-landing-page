@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
 export const ChapterWrapper = styled(Wrapper)`
@@ -10,7 +11,7 @@ export const ChapterWrapper = styled(Wrapper)`
   `}
 `;
 
-export const ChapterList = styled.div`
+export const ChapterList = styled(motion.div)`
   ${tw`
     grid
     grid-cols-1 

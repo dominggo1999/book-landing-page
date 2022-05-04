@@ -1,4 +1,5 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../Wrapper';
 
 export const SectionHeaderWrapper = styled(Wrapper)`
@@ -11,7 +12,7 @@ export const SectionHeaderWrapper = styled(Wrapper)`
   `}
 `;
 
-export const Title = styled.div`
+export const Title = styled(motion.div)`
   ${tw`
     text-2xl
     lg:text-4xl 
@@ -20,7 +21,7 @@ export const Title = styled.div`
   `}
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled(motion.div)`
   ${tw`
     mb-1 
     text-sm 

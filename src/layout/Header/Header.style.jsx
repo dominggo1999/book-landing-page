@@ -1,7 +1,8 @@
 import tw, { styled } from 'twin.macro';
+import { motion } from 'framer-motion';
 import { Wrapper } from '../../common/Wrapper';
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled(motion.header)`
   ${tw`
     py-4
     w-full 
@@ -20,10 +21,11 @@ export const HeaderContent = styled(Wrapper)`
     justify-between 
     items-center  
     relative 
+    overflow-visible
   `}
 `;
 
-export const Brand = styled.a`
+export const Brand = styled(motion.a)`
   ${tw`
     text-3xl 
     text-accent
@@ -49,7 +51,7 @@ export const Navigation = styled.ul`
   `}
 `;
 
-export const NavItem = styled.li`
+export const NavItem = styled(motion.li)`
   ${tw`
     font-primary
     capitalize 

@@ -10,6 +10,8 @@ import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import { reviews } from '../../data/reviews';
 import { breakpoints } from '../../constants/breakpoints';
 import ReviewItem from './ReviewItem';
+import useAnimate from '../../hooks/useAnimate';
+import { slideUp } from '../../animations/single';
 
 const responsiveBreakpoints = {
   // md
@@ -29,6 +31,8 @@ const responsiveBreakpoints = {
 };
 
 const Reviews = () => {
+  const [reviewsRef, reviewsAnimationControls] = useAnimate({ threshold: 0 });
+
   const swiperSettings = {
     modules: [Pagination],
     spaceBetween: 3,
@@ -43,7 +47,12 @@ const Reviews = () => {
         title="Praesent id turpis sed augue oxare"
         subtitle="Reviews"
       />
-      <ReviewsList>
+      <ReviewsList
+        ref={reviewsRef}
+        variants={slideUp}
+        initial="hidden"
+        animate={reviewsAnimationControls}
+      >
         <Swiper {...swiperSettings}>
           {
             reviews?.length > 0 && reviews.map((item) => (
