@@ -11,7 +11,7 @@ const useShowNavigation = () => {
   useEffect(() => {
     const closeNavigation = () => {
       if(window.innerWidth >= breakpoints.lg) {
-        showNavigation && toggleNavigation();
+        setShowNavigation(false);
       }
     };
     window.addEventListener('resize', closeNavigation);
