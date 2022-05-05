@@ -13,7 +13,7 @@ import useAnimate from '../../hooks/useAnimate';
 import { slideUp } from '../../animations/single';
 
 const Chapters = () => {
-  const [chaptersRef, chaptersAnimationControls] = useAnimate({ threshold: 0.15 });
+  const [chaptersRef, chaptersAnimationControls] = useAnimate({ threshold: 0.1 });
 
   return (
     <ChapterWrapper id="chapters">
