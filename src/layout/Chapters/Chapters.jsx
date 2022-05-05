@@ -82,7 +82,7 @@ const Chapters = () => {
           </ChapterContent>
         </ChapterItem>
         <ChapterItem>
-          <ChapterNumber>6</ChapterNumber>
+          <ChapterNumber>7</ChapterNumber>
           <ChapterContent>
             <ChapterTitle>Lorem, ipsum dolor.</ChapterTitle>
             <ChapterDescription>
@@ -91,7 +91,7 @@ const Chapters = () => {
           </ChapterContent>
         </ChapterItem>
         <ChapterItem>
-          <ChapterNumber>6</ChapterNumber>
+          <ChapterNumber>8</ChapterNumber>
           <ChapterContent>
             <ChapterTitle>Lorem, ipsum dolor.</ChapterTitle>
             <ChapterDescription>
@@ -100,7 +100,7 @@ const Chapters = () => {
           </ChapterContent>
         </ChapterItem>
         <ChapterItem>
-          <ChapterNumber>6</ChapterNumber>
+          <ChapterNumber>9</ChapterNumber>
           <ChapterContent>
             <ChapterTitle>Lorem, ipsum dolor.</ChapterTitle>
             <ChapterDescription>
