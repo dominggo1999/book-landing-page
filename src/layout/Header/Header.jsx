@@ -45,6 +45,13 @@ const Header = () => {
     scrollToTarget(href);
   };
 
+  const handleBrandClick = () =>{
+    scrollToTarget('#hero');
+
+    // Only toggle if mobile navigation is shown to prevent showing navigation on large screen
+    showNavigation && toggleNavigation();
+  }
+
   return (
     <HeaderWrapper
       style={{ height: headerHeight }}
@@ -56,7 +63,7 @@ const Header = () => {
     >
       <HeaderContent>
         <Brand
-          onClick={() => scrollToTarget('#hero')}
+          onClick={handleBrandClick}
           href="#hero"
           variants={brandSlideRight}
         >
